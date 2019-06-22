@@ -1,52 +1,43 @@
-/* eslint-disable no-unused-expressions */
 [
     {
       "id": 1,
-      "image": "angelfish.jpg"
+      "image": "BJM.jpg"
     },
     {
       "id": 2,
-      "image": "barracuda.jpeg"    
+      "image": "chapterhouse.jpg"    
     },
     {
       "id": 3,
-      "image": "butterfly.jpg"
+      "image": "cocteautwins.jpg"
     },
     {
       "id": 4,
-      "image": "chromis.jpg" 
+      "image": "mbv.jpg" 
     },
     {
       "id": 5,
-      "image": "clownfish.jpg"
+      "image": "palesaints.jpg"
     },
     {
       "id": 6,
-      "image": "creolewrasse.jpg"
+      "image": "ride.jpg"
     },
     {
       "id": 7,
-      "image": "damselfish.jpg"
+      "image": "slowdive.jpg"
     },
     {
       "id": 8,
-      "image": "grunt.jpg"
+      "image": "spiritualized.jpg"
     },
     {
       "id": 9,
-      "image": "parrotfish.jpg"
+      "image": "swervedriver.jpg"
     },
     {
       "id": 10,
-      "image": "rockbeauty.jpg"
-    },
-    {
-      "id": 11,
-      "image": "sergeantmajor.JPG"
-    },
-    {
-      "id": 12,
-      "image": "tang.jpg"
+      "image": "theverve.jpg"
     }
   ]
   

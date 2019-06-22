@@ -1,85 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
-
 //imports dependencies and files
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
-import FriendCard from "./components/FriendCard";
+import BandCard from "./components/BandCard";
 import Footer from "./components/Footer";
-import fish from "./fish.json";
+import bands from "./bands.json";
 import "./App.css";
 
 //sets state to 0 or empty
 class App extends Component {
   state = {
-    fish,
-    clickedFish: [],
+    bands,
+    clickedBands: [],
     score: 0
   };
 
-//when you click on a card ... the fish is taken out of the array
+//when you click on a card ... the bands is taken out of the array
   imageClick = event => {
-    const currentFish = event.target.alt;
-    const FishAlreadyClicked =
-      this.state.clickedFish.indexOf(currentFish) > -1;
+    const currentBands = event.target.alt;
+    const bandsAlreadyClicked =
+      this.state.clickedBands.indexOf(currentBands) > -1;
 
-//if you click on a fish that has already been selected, the game is reset and cards reordered
-    if (FishAlreadyClicked) {
+//if you click on a bands that has already been selected, the game is reset and cards reordered
+    if (bandsAlreadyClicked) {
       this.setState({
-        fish: this.state.fish.sort(function(a, b) {
+        bands: this.state.bands.sort(function(a, b) {
           return 0.5 - Math.random();
         }),
-        clickedFish: [],
+        clickedBands: [],
         score: 0
       });
-        alert("You lose. Play again?");
+        alert("Going Blank Again? You chose the same band twice! Play Again?");
 
-//if you click on an available fish, your score is increased and cards reordered
+//if you click on an available bands, your score is increased and cards reordered
     } else {
       this.setState(
         {
-          fish: this.state.fish.sort(function(a, b) {
+          bands: this.state.bands.sort(function(a, b) {
             return 0.5 - Math.random();
           }),
-          clickedFish: this.state.clickedFish.concat(
-            currentFish
+          clickedBands: this.state.clickedBands.concat(
+            currentBands
           ),
           score: this.state.score + 1
         },
-//if you get all 12 fish corrent you get a congrats message and the game resets        
+//if you get all 12 bands corrent you get a congrats message and the game resets        
         () => {
           if (this.state.score === 12) {
             alert("Yay! You Win!");
             this.setState({
-              fish: this.state.fish.sort(function(a, b) {
+              bands: this.state.bands.sort(function(a, b) {
                 return 0.5 - Math.random();
               }),
-              clickedFish: [],
+              clickedBands: [],
               score: 0
             });
           }
@@ -97,12 +70,12 @@ class App extends Component {
         />
         <Jumbotron />
         <div className="wrapper">
-          {this.state.fish.map(fish => (
-            <FriendCard
+          {this.state.bands.map(bands => (
+            <BandCard
               imageClick={this.imageClick}
-              id={fish.id}
-              key={fish.id}
-              image={fish.image}
+              id={bands.id}
+              key={bands.id}
+              image={bands.image}
             />
           ))}
         </div>
